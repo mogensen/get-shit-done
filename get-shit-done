@@ -1,7 +1,12 @@
 #!/bin/sh
 
 EXT=".php"
-DIRNAME=$(dirname $0)
+PATHNAME=$(readlink $0)
+if [ $? -ne 0 ] ; then
+	DIRNAME=$(dirname $0)
+else
+	DIRNAME=$(dirname $PATHNAME)
+fi
 
 if [ `whoami` != "root" ]
 then
