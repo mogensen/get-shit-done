@@ -11,8 +11,8 @@ if ( 'root' != strtolower($whoami) ) {
 }
 
 $homedir = trim(`cd ~ && pwd`);
-$iniLocal = $homedir.'/.get-shit-done.ini';
-$iniGlobal = './sites.ini';
+$iniLocal = $homedir.'/.config/get-shit-done.ini';
+$iniGlobal = __DIR__ . '/sites.ini';
 
 $uname = trim(`uname`);
 
